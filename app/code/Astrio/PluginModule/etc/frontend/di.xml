@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="astrio_plugin_module_magento_catalog_model_product" type="Astrio\PluginModule\Plugin\Magento\Catalog\Model\Product"/>
+    </type>
+    <preference for="Magento\Catalog\Block\Product\ListProduct" type="Astrio\PluginModule\Rewrite\Magento\Catalog\Block\Product\ListProduct"/>
+    <type name="Astrio\PluginModule\Plugin\Magento\Catalog\Model\Product">
+        <arguments>
+            <argument name="nameModifier" xsi:type="object">Astrio\PluginModule\Modifier\ModifierProductName</argument>
+            <argument name="skuModifier" xsi:type="object">Astrio\PluginModule\Modifier\ModifierProductSku</argument>
+        </arguments>
+    </type>
+    <virtualType name="Astrio\PluginModule\Modifier\ModifierProductName" type="Astrio\PluginModule\Modifier\ModifierProduct">
+        <arguments>
+            <argument name="xmlPathPrefix" xsi:type="string">astrio_mod_info/name/prefix</argument>
+            <argument name="xmlPathPostfix" xsi:type="string">astrio_mod_info/name/postfix</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Astrio\PluginModule\Modifier\ModifierProductSku" type="Astrio\PluginModule\Modifier\ModifierProduct">
+        <arguments>
+            <argument name="xmlPathPrefix" xsi:type="string">astrio_mod_info/sku/prefix</argument>
+            <argument name="xmlPathPostfix" xsi:type="string">astrio_mod_info/sku/postfix</argument>
+        </arguments>
+    </virtualType>
+</config>

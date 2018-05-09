@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <astrio_increment_price>
+            <general>
+                <enabled>0</enabled>
+                <increment>0</increment>
+            </general>
+        </astrio_increment_price>
+        <astrio_mod_info>
+            <general>
+                <enabled>0</enabled>
+            </general>
+            <name>
+                <enabled>0</enabled>
+            </name>
+            <sku>
+                <enabled>0</enabled>
+            </sku>
+        </astrio_mod_info>
+    </default>
+</config>
